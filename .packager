@@ -1,0 +1,51 @@
+# -*- mode: ruby -*-
+# -*- encoding: utf-8 -*-
+
+Packager.build do
+  ubuntu do
+    target do
+      platform 'ubuntu'
+      version '14.04'
+    end
+    dependencies do
+      build [
+      'git-core',
+      'curl',
+      'zlib1g-dev',
+      'build-essential',
+      'libssl-dev',
+      'libreadline-dev',
+      'libyaml-dev',
+      'libsqlite3-dev',
+      'sqlite3',
+      'libxml2-dev',
+      'libxslt1-dev',
+      'libcurl4-openssl-dev',
+      'python-software-properties',
+      'libffi-dev',
+      'wget'
+      ]
+    end
+    build do
+      name 'heavywater-ruby'
+      template :generic
+      environment {
+        'LDFLAGS': '-Wl,-rpath $PKG_DIR/lib -L$PKG_DIR/lib -I$PKG_DIR/include',
+        'CFLAGS': '-L$PKG_DIR/lib -I$PKG_DIR/include'
+      }
+      commands do
+        build [
+          'wget http://ftp.ruby-lang.org/pub/ruby/2.1/ruby-2.1.5.tar.gz',
+          'tar -zxf ruby-2.1.5.tar.gz',
+          'cd ruby-2.1.5',
+          './configure --prefix=$PKG_DIR --with-opt-dir=$PKG_DIR',
+          'make',
+          'make install'
+        ]
+      end
+    end
+  end
+end
+
+
+
