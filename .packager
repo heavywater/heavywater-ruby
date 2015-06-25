@@ -53,7 +53,7 @@ Packager.build do
       environment(
         'PATH' => "/usr/bin:/bin:$PATH",
         'LDFLAGS' => '-Wl,-rpath $PKG_DIR/lib -L$PKG_DIR/lib -I$PKG_DIR/include',
-        'CFLAGS' => '-L$PKG_DIR/lib -I$PKG_DIR/include'
+        'CFLAGS' => '-L$PKG_DIR/lib -I$PKG_DIR/include -march=x86-64 -mtune=x86-64'
       )
       commands do
         build [
