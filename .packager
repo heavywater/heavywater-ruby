@@ -45,11 +45,13 @@ Packager.build do
       'pkg-config',
       'bison'
       ]
+
     end
     build do
       name 'heavywater-ruby'
       template :generic
       environment(
+        'PATH' => "/usr/bin:$PATH",
         'LDFLAGS' => '-Wl,-rpath $PKG_DIR/lib -L$PKG_DIR/lib -I$PKG_DIR/include',
         'CFLAGS' => '-L$PKG_DIR/lib -I$PKG_DIR/include'
       )
