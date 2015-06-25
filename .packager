@@ -51,14 +51,14 @@ Packager.build do
       name 'heavywater-ruby'
       template :generic
       environment(
-        'PATH' => "/usr/bin:$PATH",
+        'PATH' => "/usr/bin:/bin:$PATH",
         'LDFLAGS' => '-Wl,-rpath $PKG_DIR/lib -L$PKG_DIR/lib -I$PKG_DIR/include',
         'CFLAGS' => '-L$PKG_DIR/lib -I$PKG_DIR/include'
       )
       commands do
         build [
           'wget http://ftp.ruby-lang.org/pub/ruby/2.1/ruby-2.1.5.tar.gz',
-          'tar -zxf ruby-2.1.5.tar.gz',
+          '/bin/tar -zxf ruby-2.1.5.tar.gz',
           './ruby-2.1.5/configure --prefix=$PKG_DIR --with-opt-dir=$PKG_DIR',
           'make -C ./ruby-2.1.5',
           'make -C ./ruby-2.1.5 install'
