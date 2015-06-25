@@ -25,7 +25,25 @@ Packager.build do
       'python-software-properties',
       'libffi-dev',
       'wget',
-      'patch'
+      'patch',
+      'autoconf',
+      'openssl',
+      'libreadline6',
+      'libreadline6-dev',
+      'zlib1g',
+      'zlib1g-dev',
+      'libssl-dev',
+      'libyaml-dev',
+      'libsqlite3-dev',
+      'sqlite3',
+      'libc6-dev',
+      'ncurses-dev',
+      'automake',
+      'libtool',
+      'bison',
+      'subversion',
+      'pkg-config',
+      'bison'
       ]
     end
     build do
