@@ -40,7 +40,7 @@ Packager.build do
       runtime [
         'libstdc++6',
         'libc6',
-        'libffi5',
+        'libffi6',
         'libgdbm3',
         'libncurses5',
         'libreadline6',
