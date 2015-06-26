@@ -10,47 +10,41 @@ Packager.build do
     end
     dependencies do
       build [
-      'git-core',
-      'curl',
-      'zlib1g-dev',
-      'build-essential',
-      'libssl-dev',
-      'libreadline-dev',
-      'libyaml-dev',
-      'libsqlite3-dev',
-      'sqlite3',
-      'libxml2-dev',
-      'libxslt1-dev',
-      'libcurl4-openssl-dev',
-      'python-software-properties',
-      'libffi-dev',
-      'wget',
-      'patch',
-      'autoconf',
-      'openssl',
-      'libreadline6',
-      'libreadline6-dev',
-      'zlib1g',
-      'zlib1g-dev',
-      'libssl-dev',
-      'libyaml-dev',
-      'libsqlite3-dev',
-      'sqlite3',
-      'libc6-dev',
-      'ncurses-dev',
-      'automake',
-      'libtool',
-      'bison',
-      'subversion',
-      'pkg-config',
-      'bison'
+        'autoconf',
+        'automake',
+        'bison',
+        'build-essential',
+        'curl',
+        'git-core',
+        'libc6-dev',
+        'libcurl4-openssl-dev',
+        'libffi-dev',
+        'libreadline-dev',
+        'libreadline6',
+        'libreadline6-dev',
+        'libsqlite3-dev',
+        'libssl-dev',
+        'libtool',
+        'libxml2-dev',
+        'libxslt1-dev',
+        'libyaml-dev',
+        'ncurses-dev',
+        'openssl',
+        'patch',
+        'pkg-config',
+        'python-software-properties',
+        'sqlite3',
+        'subversion',
+        'wget',
+        'zlib1g',
+        'zlib1g-dev'
       ]
-
     end
     build do
       name 'heavywater-ruby'
       template :generic
       environment(
+       { 'DESTDIR' => '$PKG_DIR' }
       )
       commands do
         build [
@@ -58,7 +52,7 @@ Packager.build do
           '/bin/tar -zxf ruby-2.1.5.tar.gz',
           'mv ruby-2.1.5/* .',
           'autoconf',
-          './configure --bindir=/bin --prefix=$PKG_DIR --with-opt-dir=$PKG_DIR --disable-install-doc --enable-shared',
+          './configure --prefix=/usr',
           'make',
           'make install'
         ]
