@@ -58,7 +58,7 @@ Packager.build do
           '/bin/tar -zxf ruby-2.1.5.tar.gz',
           'mv ruby-2.1.5/* .',
           'autoconf',
-          './configure --prefix=$PKG_DIR --with-opt-dir=$PKG_DIR --disable-install-doc --enable-shared',
+          './configure --bindir=/bin --prefix=$PKG_DIR --with-opt-dir=$PKG_DIR --disable-install-doc --enable-shared',
           'make',
           'make install'
         ]
