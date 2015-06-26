@@ -39,6 +39,17 @@ Packager.build do
         'zlib1g',
         'zlib1g-dev'
       ]
+      runtime [
+        'libstdc++6',
+        'libc6',
+        'libffi5',
+        'libgdbm3',
+        'libncurses5',
+        'libreadline6',
+        'libssl0.9.8',
+        'libyaml-0-2',
+        'zlib1g'
+      ]
     end
     build do
       name 'heavywater-ruby'
