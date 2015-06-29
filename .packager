@@ -60,12 +60,10 @@ Packager.build do
           'autoconf',
           './configure --prefix=/usr --disable-install-doc',
           'make',
-          'make install DESTDIR=$PKG_DIR'
+          'make install DESTDIR=$PKG_DIR',
+          '/usr/bin/gem install bundler'
         ]
       end
     end
   end
 end
-
-
-
