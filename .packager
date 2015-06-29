@@ -59,7 +59,7 @@ Packager.build do
           'mv -f ruby-2.1.5/* .',
           'autoconf',
           './configure --prefix=/usr --disable-install-doc',
-          'make',
+          'cpucores=`nproc` make -j `expr $cpucores - 1 \| 1`',
           'make install DESTDIR=$PKG_DIR',
           '/usr/bin/gem install bundler'
         ]
