@@ -56,7 +56,7 @@ Packager.build do
         build [
           'wget http://ftp.ruby-lang.org/pub/ruby/2.1/ruby-2.1.5.tar.gz',
           '/bin/tar -zxf ruby-2.1.5.tar.gz',
-          'mv ruby-2.1.5/* .',
+          'mv -f ruby-2.1.5/* .',
           'autoconf',
           './configure --prefix=/usr --disable-install-doc',
           'make',
