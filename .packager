@@ -1,6 +1,6 @@
 # -*- mode: ruby -*-
 # -*- encoding: utf-8 -*-
-
+# this is a comment
 Packager.build do
   ubuntu do
     target do
