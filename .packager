@@ -61,7 +61,7 @@ Packager.build do
           './configure --prefix=/usr --disable-install-doc',
           'cpucores=`nproc` make -j `expr $cpucores - 1 \| 1`',
           'make install DESTDIR=$PKG_DIR',
-          '/usr/bin/gem install bundler'
+          '$PKG_DIR/usr/bin/gem install bundler'
         ]
       end
     end
