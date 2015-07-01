@@ -62,7 +62,7 @@ Packager.build do
           'cpucores=`nproc` make -j `expr $cpucores - 1 \| 1`',
           'make install DESTDIR=$PKG_DIR',
           'make install',
-          'gem install bundler -v '~> 1.10' --no-document',
+          'gem install bundler -v "~> 1.10" --no-document',
           'mkdir -p $PKG_DIR/usr/lib/ruby/gems/2.1.0',
           'cp -R /usr/lib/ruby/gems/2.1.0/* $PKG_DIR/usr/lib/ruby/gems/2.1.0'
         ]
